@@ -28,8 +28,8 @@ let rec length = function
   | x::xs -> 1 + length xs
 
 (* Reverse a list. *)
-
+(*not actually correct*)
 let rec reverse = function
   | [] -> []
   | [x] -> [x]
-  | [x::xs] -> reverse xs::x
+  | [x::xs] -> x :: reverse xs
