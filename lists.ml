@@ -27,9 +27,22 @@ let rec length = function
   | [] -> 0
   | x::xs -> 1 + length xs
 
+
+
+let length_tail_rec(list) = 
+  let rec aux x = function
+    | [] -> x
+    | _::xs -> aux (x+1) xs
+  in    
+  aux 0 list;;
+ 
+
+
 (* Reverse a list. *)
-(*not actually correct*)
+(*not actually correct
 let rec reverse = function
   | [] -> []
   | [x] -> [x]
-  | [x::xs] -> x :: reverse xs
+  | x::xs -> reverse (List.tl xs) @ [x]
+*)
+
